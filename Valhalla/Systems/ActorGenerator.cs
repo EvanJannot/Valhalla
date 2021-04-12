@@ -82,26 +82,31 @@ namespace RogueSharpRLNetSamples.Systems
          return monster;
       }
 
+        public static void ResetPlayer()
+        {
+            _player = null;
+        }
 
-      public static Player CreatePlayer()
+
+      public static Player CreatePlayer(int atkX, int defX, int awaX, int hpX, string name, char symbol)
       {
          if ( _player == null )
          {
             _player = new Player {
-               Attack = 2,
+               Attack = 2 +atkX,
                AttackChance = 60,
-               Awareness = 15,
+               Awareness = 15 + awaX,
                Color = Colors.Player,
-               Defense = 2,
+               Defense = 2 + defX,
                DefenseChance = 40,
                Gold = 0,
-               Health = 100,
-               MaxHealth = 100,
+               Health = 100 + hpX,
+               MaxHealth = 100 + hpX,
                Xp = 0,
                Lvl = 1,
-               Name = "Evan",
+               Name = name,
                Speed = 10,
-               Symbol = '>'
+               Symbol = symbol
             };
          }
 

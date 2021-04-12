@@ -10,6 +10,12 @@ namespace RogueSharpRLNetSamples
 {
     public static class Game
     {
+        private static int _atkX;
+        private static int _defX;
+        private static int _awaX;
+        private static int _hpX;
+        private static string _name = "Rogue";
+        private static char _symbol;
         private static readonly int _screenWidth = 80;
         private static readonly int _screenHeight = 48;
         private static readonly int _mapWidth = 60;
@@ -31,7 +37,7 @@ namespace RogueSharpRLNetSamples
 
         private static int _mondeLevel = 0;
         private static int _mapLevel = 1;
-        private static bool _alive = true; 
+        private static bool _alive = true;
         private static bool _renderRequired = true;
 
         public static Player Player { get; set; }
@@ -46,13 +52,16 @@ namespace RogueSharpRLNetSamples
 
         public static void Main()
         {
+            Reset();
+            Console.WriteLine("Comment vous applez-vous ?");
+            _name = Console.ReadLine();
             Console.WriteLine("Veuillez sélectionner une des classes : \n" +
                 "1 : Guerrier \n" +
                 "2 : Berserk \n" +
                 "3 : Brute \n" +
                 "4 : Eclaireur");
             int classe = int.Parse(Console.ReadLine());
-            while (classe != 1 & classe != 2 & classe != 3 & classe !=4)
+            while (classe != 1 & classe != 2 & classe != 3 & classe != 4)
             {
                 Console.WriteLine("Veuillez entrer un chiffre correspondant à une classe.");
                 classe = int.Parse(Console.ReadLine());
@@ -80,8 +89,8 @@ namespace RogueSharpRLNetSamples
             Player = new Player();
             SchedulingSystem = new SchedulingSystem();
 
-            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 20, 20, _mapLevel,_mondeLevel);
-            DungeonMap = mapGenerator.CreateMap(_mondeLevel,_mapLevel);
+            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 20, 20, _mapLevel, _mondeLevel);
+            DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
 
             _rootConsole = new RLRootConsole(fontFileName, _screenWidth, _screenHeight, 16, 16, 1.2f, consoleTitle);
             _mapConsole = new RLConsole(_mapWidth, _mapHeight);
@@ -111,27 +120,41 @@ namespace RogueSharpRLNetSamples
             End.Add("Vous pouvez relancer une partie en appuyant sur O");
         }
 
+        public static void Reset()
+        {
+            _alive = true;
+            _renderRequired = true;
+            _atkX = 0;
+            _defX = 0;
+            _awaX = 0;
+            _hpX = 0;
+            _mondeLevel = 0;
+            _mapLevel = 1;
+        }
+
         public static void StatsClasse(int classe)
         {
-            int MultiAtk = 1;
-            int MultiDef = 1;
-            int MultiHp = 1;
-            int MultiVis = 1;
             if (classe == 1)
             {
-
+                _symbol = (char)61;
             }
             else if (classe == 2)
             {
-
+                _symbol = (char)145;
+                _atkX = 1;
+                _defX = -1;
             }
             else if (classe == 3)
             {
-
+                _symbol = (char)158;
+                _hpX = 30;
+                _defX = -1;
             }
-            else if (classe ==4)
+            else if (classe == 4)
             {
-
+                _symbol = (char)157;
+                _hpX = -25;
+                _awaX = 5;
             }
         }
 
@@ -190,40 +213,40 @@ namespace RogueSharpRLNetSamples
                             {
                                 MessageLog = new MessageLog();
                                 CommandSystem = new CommandSystem();
-                                if (_mondeLevel==0 | _mondeLevel == 4)
+                                if (_mondeLevel == 0 | _mondeLevel == 4)
                                 {
-                                    if(_mondeLevel == 0)
+                                    if (_mondeLevel == 0)
                                     {
                                         SoundPlayer player = new SoundPlayer();
                                         player.SoundLocation = "Music/forest.wav";
                                         player.PlayLooping();
                                     }
-                                    else if(_mondeLevel==4)
+                                    else if (_mondeLevel == 4)
                                     {
                                         SoundPlayer player = new SoundPlayer();
                                         player.SoundLocation = "Music/theme+.wav";
                                         player.PlayLooping();
                                     }
                                     MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 13, 7, _mapLevel, ++_mondeLevel);
-                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel,_mapLevel);
+                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                     _rootConsole.Title = $"Valhalla - Niveau {_mondeLevel}.{_mapLevel}";
                                     didPlayerAct = true;
                                 }
                                 else if (_mapLevel == 4)
                                 {
-                                    if(_mondeLevel==1)
+                                    if (_mondeLevel == 1)
                                     {
                                         SoundPlayer player = new SoundPlayer();
                                         player.SoundLocation = "Music/boss1.wav";
                                         player.PlayLooping();
                                     }
-                                    else if (_mondeLevel==2)
+                                    else if (_mondeLevel == 2)
                                     {
                                         SoundPlayer player = new SoundPlayer();
                                         player.SoundLocation = "Music/boss2.wav";
                                         player.PlayLooping();
                                     }
-                                    else if (_mondeLevel==3)
+                                    else if (_mondeLevel == 3)
                                     {
                                         SoundPlayer player = new SoundPlayer();
                                         player.SoundLocation = "Music/jojo.wav";
@@ -236,28 +259,28 @@ namespace RogueSharpRLNetSamples
                                         player.PlayLooping();
                                     }
                                     MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 15, 15, ++_mapLevel, _mondeLevel);
-                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel);
+                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                     _rootConsole.Title = $"Valhalla - Niveau {_mondeLevel}.{_mapLevel}";
                                     didPlayerAct = true;
                                 }
                                 else if (_mapLevel == 5)
                                 {
                                     MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 2, 10, 10, ++_mapLevel, _mondeLevel);
-                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel,_mapLevel);
+                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                     _rootConsole.Title = $"Valhalla - Niveau {_mondeLevel}.{_mapLevel}";
                                     didPlayerAct = true;
                                 }
-                                else if(_mapLevel==6)
+                                else if (_mapLevel == 6)
                                 {
-                                    if(_mondeLevel != 3)
+                                    if (_mondeLevel != 3)
                                     {
-                                        if (_mondeLevel==1)
+                                        if (_mondeLevel == 1)
                                         {
                                             SoundPlayer player = new SoundPlayer();
                                             player.SoundLocation = "Music/cave.wav";
                                             player.PlayLooping();
                                         }
-                                        else if(_mondeLevel==2)
+                                        else if (_mondeLevel == 2)
                                         {
                                             SoundPlayer player = new SoundPlayer();
                                             player.SoundLocation = "Music/castle.wav";
@@ -271,7 +294,7 @@ namespace RogueSharpRLNetSamples
                                         }
                                         _mapLevel = 1;
                                         MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 13, 7, _mapLevel, ++_mondeLevel);
-                                        DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel);
+                                        DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                         _rootConsole.Title = $"Valhalla - Niveau {_mondeLevel}.{_mapLevel}";
                                         didPlayerAct = true;
                                     }
@@ -282,7 +305,7 @@ namespace RogueSharpRLNetSamples
                                         player.PlayLooping();
                                         _mapLevel = 1;
                                         MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 25, 25, _mapLevel, ++_mondeLevel);
-                                        DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel);
+                                        DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                         _rootConsole.Title = $"Valhalla - Fin";
                                         didPlayerAct = true;
                                     }
@@ -291,7 +314,7 @@ namespace RogueSharpRLNetSamples
                                 else if (_mapLevel != 6 && _mondeLevel != 0)
                                 {
                                     MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 13, 7, ++_mapLevel, _mondeLevel);
-                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel,_mapLevel);
+                                    DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                     _rootConsole.Title = $"Valhalla - Niveau {_mondeLevel}.{_mapLevel}";
                                     didPlayerAct = true;
                                 }
@@ -328,7 +351,7 @@ namespace RogueSharpRLNetSamples
                     _messageConsole.Clear();
                     _statConsole.Clear();
                     _inventoryConsole.Clear();
-                    DungeonMap.Draw(_mapConsole, _statConsole, _inventoryConsole,_mondeLevel);
+                    DungeonMap.Draw(_mapConsole, _statConsole, _inventoryConsole, _mondeLevel);
                     MessageLog.Draw(_messageConsole);
                     TargetingSystem.Draw(_mapConsole);
                     RLConsole.Blit(_mapConsole, 0, 0, _mapWidth, _mapHeight, _rootConsole, 0, _inventoryHeight);
@@ -342,17 +365,20 @@ namespace RogueSharpRLNetSamples
             }
             else
             {
+                _mapConsole.Clear();
+                _messageConsole.Clear();
+                _statConsole.Clear();
+                _inventoryConsole.Clear();
                 RLKeyPress keyPress = _rootConsole.Keyboard.GetKeyPress();
                 End.Draw(_endgame);
                 RLConsole.Blit(_endgame, 0, 0, _screenWidth, _screenHeight, _rootConsole, 0, 0);
                 _rootConsole.Draw();
-                if(keyPress != null)
+                if (keyPress != null)
                 {
                     if (keyPress.Key == RLKey.O)
                     {
-                        _alive = true;
-                        _renderRequired = true;
-                        Player.Health = Player.MaxHealth;
+                        ActorGenerator.ResetPlayer();
+                        _rootConsole.Close();
                         Main();
                     }
                     else if (keyPress.Key == RLKey.Escape)

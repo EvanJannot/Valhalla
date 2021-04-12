@@ -35,7 +35,7 @@ namespace RogueSharpRLNetSamples.Systems
 
         }
 
-        public DungeonMap CreateMap(int monde, int lvl)
+        public DungeonMap CreateMap(int monde, int lvl, int atkX, int defX, int awaX, int hpX, string name, char symbol)
         {
             _map.Initialize(_width, _height);
 
@@ -113,7 +113,8 @@ namespace RogueSharpRLNetSamples.Systems
 
             CreateStairs();
 
-            PlacePlayer();
+           
+            PlacePlayer(atkX, defX, awaX, hpX, name, symbol);
 
 
             if (monde == 0 | monde==4)
@@ -439,9 +440,9 @@ namespace RogueSharpRLNetSamples.Systems
             }
         }
 
-        private void PlacePlayer()
+        private void PlacePlayer(int atkX, int defX, int awaX, int hpX, string name, char symbol)
         {
-            Player player = ActorGenerator.CreatePlayer();
+            Player player = ActorGenerator.CreatePlayer(atkX, defX, awaX, hpX, name, symbol);
 
             player.X = _map.Rooms[0].Center.X;
             player.Y = _map.Rooms[0].Center.Y;
