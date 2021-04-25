@@ -1,13 +1,14 @@
 ﻿using RLNET;
 using RogueSharp;
-using RogueSharpRLNetSamples.Equipment;
-using RogueSharpRLNetSamples.Interfaces;
+using Valhalla.Equipment;
+using Valhalla.Interfaces;
 
-namespace RogueSharpRLNetSamples.Core
+namespace Valhalla.Core
 {
+    //Classe Acteur qui est la classe mère de la classe du joueur et des monstres 
     public class Actor : IActor, IDrawable, IScheduleable
     {
-        public Actor()
+        public Actor() //Un acteur est caractérisé par son equipement, de base il n'en a pas 
         {
             Head = HeadEquipment.None();
             Body = BodyEquipment.None();
@@ -15,13 +16,13 @@ namespace RogueSharpRLNetSamples.Core
             Feet = FeetEquipment.None();
         }
 
-        // IActor
+        //Ci dessous, l'ensemble des getter et setter
         public HeadEquipment Head { get; set; }
         public BodyEquipment Body { get; set; }
         public HandEquipment Hand { get; set; }
         public FeetEquipment Feet { get; set; }
 
-        private int _attack;
+        private int _attack; //Caractéristiques pouvant définir un acteur
         private int _attackChance;
         private int _awareness;
         private int _defense;
@@ -177,49 +178,46 @@ namespace RogueSharpRLNetSamples.Core
             }
         }
 
-        // IDrawable
         public RLColor Color { get; set; }
         public char Symbol { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
+
+        //Fonction afin de dessiner l'acteur 
         public void Draw(RLConsole mapConsole, IMap map, int lvl)
         {
-            if (!map.GetCell(X, Y).IsExplored)
+            if (!map.GetCell(X, Y).IsExplored) //Si la case n'est pas explorée, l'acteur n'est pas dessiné (permet de ne pas voir les monstres des zones non explorées)
             {
                 return;
             }
 
-            // Only draw the actor with the color and symbol when they are in field-of-view
+            // Si la case est visible, on dessine l'acteur avec sa couleur et son symbole
             if (map.IsInFov(X, Y))
             {
                 mapConsole.Set(X, Y, Color, Colors.FloorBackgroundFov, Symbol);
             }
-            else
+            else //Sinon on dessine un sol normal
             {
                 if (lvl == 1)
                 {
-                    // When not in field-of-view just draw a normal floor
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)8);
                 }
                 else if (lvl==2)
                 {
-                    // When not in field-of-view just draw a normal floor
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)95);
                 }
                 else if (lvl == 3)
                 {
-                    // When not in field-of-view just draw a normal floor
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)64);
                 }
                 else 
                 {
-                    // When not in field-of-view just draw a normal floor
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)154);
                 }
             }
         }
 
-        // IScheduleable
+        //Permet de récupérer la vitesse d'un acteur pour le système de gestion du temps 
         public int Time
         {
             get

@@ -1,8 +1,9 @@
 using RLNET;
 
-namespace RogueSharpRLNetSamples.Core
+namespace Valhalla.Core
 {
-   public static class Colors
+    //Dans cette classe on définit les couleurs des différents éléments qui seront utiles à notre jeu à l'aide des couleurs créées dans la classe ci dessous
+    public static class Colors
    {
       public static RLColor DoorBackground = Swatch.ComplimentDarkest;
       public static RLColor Door = Swatch.ComplimentLighter;
@@ -23,6 +24,7 @@ namespace RogueSharpRLNetSamples.Core
       public static RLColor InventoryHeading = Swatch.DbLight;
    }
 
+    //Dans cette classe on définit des couleurs à l'aide de la palette disponible en suivant le lien ci dessous
    public static class Swatch
    {
       // http://paletton.com/#uid=73d0u0k5qgb2NnT41jT74c8bJ8X

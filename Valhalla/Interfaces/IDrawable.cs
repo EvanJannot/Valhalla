@@ -1,8 +1,9 @@
 ﻿using RLNET;
 using RogueSharp;
 
-namespace RogueSharpRLNetSamples.Interfaces
+namespace Valhalla.Interfaces
 {
+    //Interface permettant de compléter les classes des objets dessinables (monstres, joueur, escaliers, portes, etc)
    public interface IDrawable
    {
       RLColor Color { get; set; }

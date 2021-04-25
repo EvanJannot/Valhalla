@@ -1,7 +1,8 @@
-﻿using RogueSharpRLNetSamples.Equipment;
+﻿using Valhalla.Equipment;
 
-namespace RogueSharpRLNetSamples.Interfaces
+namespace Valhalla.Interfaces
 {
+    //Interface permettant de définir les acteurs (permet de compléter la classe acteur)
    public interface IActor
    {
       HeadEquipment Head { get; set; }

@@ -1,5 +1,6 @@
-namespace RogueSharpRLNetSamples.Interfaces
+namespace Valhalla.Interfaces
 {
+    //Interface permettant de compléter la classe définissant l'équipement 
    public interface IEquipment
    {
       int Attack { get; set; }
