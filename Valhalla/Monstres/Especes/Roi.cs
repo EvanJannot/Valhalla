@@ -12,15 +12,15 @@ namespace Valhalla.Monsters
     {
         public static Roi Create(int level)
         {
-            int health = 15;
+            int health = 30;
             return new Roi
             {
-                Attack = 10,
+                Attack = 45,
                 AttackChance = 40,
                 Awareness = 10,
                 Color = Colors.Player,
-                Defense = 2,
-                DefenseChance = 70,
+                Defense = 9,
+                DefenseChance = 50,
                 Gold = 100,
                 Health = health,
                 MaxHealth = health,

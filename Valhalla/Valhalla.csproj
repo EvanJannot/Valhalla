@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B8037BD-BBAB-48DD-BE2C-A56BD86BD9D2}</ProjectGuid>
+    <ProjectGuid>{6294F96D-6977-4A46-9516-ED5D009AC6D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Valhalla</RootNamespace>
     <AssemblyName>Valhalla</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,21 +32,142 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RLNET, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RLNET.1.0.6\lib\RLNET.dll</HintPath>
+    </Reference>
+    <Reference Include="RogueSharp, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RogueSharp.3.0.0\lib\portable-net40+sl50+win+wpa81+wp80\RogueSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Personnage\Capacités\Ability.cs" />
+    <Compile Include="Personnage\Capacités\Fireball.cs" />
+    <Compile Include="Personnage\Capacités\Heal.cs" />
+    <Compile Include="Personnage\Capacités\DoNothing.cs" />
+    <Compile Include="Personnage\Capacités\LightningBolt.cs" />
+    <Compile Include="Personnage\Capacités\MagicMissile.cs" />
+    <Compile Include="Personnage\Capacités\RevealMap.cs" />
+    <Compile Include="Personnage\Capacités\Whirlwind.cs" />
+    <Compile Include="Core\Actor.cs" />
+    <Compile Include="Monstres\Especes\Abeille.cs" />
+    <Compile Include="Monstres\Especes\Araignee.cs" />
+    <Compile Include="Monstres\Especes\Chauve souris.cs" />
+    <Compile Include="Monstres\Especes\Demon.cs" />
+    <Compile Include="Monstres\Especes\Fantome.cs" />
+    <Compile Include="Monstres\Especes\Garde.cs" />
+    <Compile Include="Monstres\Especes\Golem.cs" />
+    <Compile Include="Monstres\Especes\Rat.cs" />
+    <Compile Include="Monstres\Especes\Roi.cs" />
+    <Compile Include="Monstres\Especes\Slime.cs" />
+    <Compile Include="Monstres\Comportement\FullyHeal.cs" />
+    <Compile Include="Monstres\Comportement\SplitSlime.cs" />
+    <Compile Include="Monstres\Comportement\RunAway.cs" />
+    <Compile Include="Monstres\Comportement\ShoutForHelp.cs" />
+    <Compile Include="Monstres\Comportement\StandardMoveAndAttack.cs" />
+    <Compile Include="Personnage\Gold.cs" />
+    <Compile Include="Interfaces\IAbility.cs" />
+    <Compile Include="Interfaces\IActor.cs" />
+    <Compile Include="Interfaces\IBehavior.cs" />
+    <Compile Include="Interfaces\ITargetable.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Personnage\Equipment\BodyEquipment.cs" />
+    <Compile Include="Core\Colors.cs" />
+    <Compile Include="Personnage\Equipment\Equipment.cs" />
+    <Compile Include="Personnage\Equipment\FeetEquipment.cs" />
+    <Compile Include="Personnage\Equipment\HandEquipment.cs" />
+    <Compile Include="Personnage\Equipment\HeadEquipment.cs" />
+    <Compile Include="Interfaces\IDrawable.cs" />
+    <Compile Include="Interfaces\IEquipment.cs" />
+    <Compile Include="Interfaces\IScheduleable.cs" />
+    <Compile Include="Interfaces\ITreasure.cs" />
+    <Compile Include="Personnage\Objets\Item.cs" />
+    <Compile Include="Personnage\Objets\TeleportScroll.cs" />
+    <Compile Include="Personnage\Objets\RevealMapScroll.cs" />
+    <Compile Include="Personnage\Objets\HealingPotion.cs" />
+    <Compile Include="Personnage\Objets\NoItem.cs" />
+    <Compile Include="Personnage\Objets\DestructionWand.cs" />
+    <Compile Include="Personnage\Objets\ArmorScroll.cs" />
+    <Compile Include="Personnage\Objets\Whetstone.cs" />
+    <Compile Include="Monstres\Especes\Ours.cs" />
+    <Compile Include="Monstres\Especes\Squelette.cs" />
+    <Compile Include="Personnage\Capacités\AbilityGenerator.cs" />
+    <Compile Include="Systeme\ActorGenerator.cs" />
+    <Compile Include="Systeme\End.cs" />
+    <Compile Include="Personnage\Equipment\EquipmentGenerator.cs" />
+    <Compile Include="Personnage\Objets\ItemGenerator.cs" />
+    <Compile Include="Carte\MapGenerator.cs" />
+    <Compile Include="Systeme\MessageLog.cs" />
+    <Compile Include="Systeme\Pause.cs" />
+    <Compile Include="Systeme\Pool.cs" />
+    <Compile Include="Systeme\CommandSystem.cs" />
+    <Compile Include="Carte\Direction.cs" />
+    <Compile Include="Carte\Door.cs" />
+    <Compile Include="Carte\DungeonMap.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Systeme\TargetingSystem.cs" />
+    <Compile Include="Carte\TreasurePile.cs" />
+    <Compile Include="Monstres\Monster.cs" />
+    <Compile Include="Personnage\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systeme\SchedulingSystem.cs" />
+    <Compile Include="Carte\Stairs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Musiques\theme+.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\boss1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\boss2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\castle.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\cave.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\forest.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\jojo.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FontFile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\boss+.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Musiques\titleTheme.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

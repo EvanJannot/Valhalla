@@ -1,4 +1,6 @@
 ﻿using System.Text;
+using System.Media;
+using System;
 using RLNET;
 using RogueSharp;
 using RogueSharp.DiceNotation;
@@ -175,7 +177,6 @@ namespace Valhalla.Systems
             StringBuilder espace = new StringBuilder();
             if (defender is Player) //Si le defenseur est le joueur 
             {
-                Game.MessageLog.Add($"{defender.Name} est mort, FIN DE LA PARTIE"); //On affiche un message et on affiche l'écran de fin du jeu
                 Game.EndGame();
             }
             else if (defender is Monster) //Si c'est un monstre 
@@ -200,7 +201,6 @@ namespace Valhalla.Systems
                 Game.DungeonMap.AddGold(defender.X, defender.Y, defender.Gold); //On ajoute de l'or en fonction des stats du monstre au sol
                 Game.Player.AddXp(defender.Xp); //On ajoute de l'xp au joueur 
                 Game.DungeonMap.RemoveMonster((Monster)defender); //On enlève le monstre 
-
                 Game.MessageLog.Add($"{defender.Name} est mort et a lache {defender.Gold} d'or"); //On affiche un message dans la console 
                 Game.MessageLog.Add(espace.ToString());
             }

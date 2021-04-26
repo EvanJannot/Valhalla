@@ -11,15 +11,15 @@ namespace Valhalla.Monsters
     {
         public static Ours Create(int level)
         {
-            int health = 15;
+            int health = 10;
             return new Ours
             {
-                Attack = 10,
+                Attack = 20,
                 AttackChance = 40,
                 Awareness = 10,
                 Color = RLColor.Brown,
-                Defense = 2,
-                DefenseChance = 70,
+                Defense = 5,
+                DefenseChance = 50,
                 Gold = 100,
                 Health = health,
                 MaxHealth = health,

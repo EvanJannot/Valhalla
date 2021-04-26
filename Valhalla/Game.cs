@@ -47,6 +47,11 @@ namespace Valhalla
 
         private static int _mondeLevel = 0; //Niveau du monde, dans chaque monde il y a un boss et des ennemis spécifiques
         private static int _mapLevel = 1; //Définition du niveau au sein du monde 
+        public static int MONDE
+        {
+            get
+            { return _mondeLevel; }
+        }
         public static int LEVEL
         {
             get
@@ -134,7 +139,7 @@ namespace Valhalla
 
             //On joue la musique de début de jeu en boucle 
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = "Music/titleTheme.wav";
+            player.SoundLocation = "Musiques/titleTheme.wav";
             player.PlayLooping();
 
             string fontFileName = "FontFile.png"; //On renseigne le nom du fichier contenant la police d'écriture à utiliser
@@ -194,7 +199,8 @@ namespace Valhalla
         {
             _alive = false;
             End.Add("Vous avez perdu");
-            End.Add($"Vous etes arrive jusqu'au niveau '{_mondeLevel}'.'{_mapLevel}'");
+            End.Add($"Vous etes arrive jusqu'au niveau '{_mondeLevel}','{_mapLevel}'");
+            End.Add($"Vous etes monte au niveau '{Player.Lvl}'");
             End.Add("Vous pouvez quitter le jeu en appuyant sur ESCP");
             End.Add("Vous pouvez relancer une partie en appuyant sur O");
         }
@@ -305,13 +311,13 @@ namespace Valhalla
                                     if (_mondeLevel == 0) //Si on est actuellement au monde 0, on va jouer la musique du monde 1 en passant l'escalier
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/forest.wav";
+                                        player.SoundLocation = "Musiques/forest.wav";
                                         player.PlayLooping();
                                     }
                                     else if (_mondeLevel == 4) //Si on est au monde 4, on va jouer la musique du jeu post fin en passant l'escalier 
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/theme+.wav";
+                                        player.SoundLocation = "Musiques/theme+.wav";
                                         player.PlayLooping();
                                     }
                                     //Dans les deux cas on génère une map identique avec au maximum 20 salles et des salles pouvant faire une taille comprise entre 7 et 13.
@@ -329,25 +335,25 @@ namespace Valhalla
                                     if (_mondeLevel == 1)
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/boss1.wav";
+                                        player.SoundLocation = "Musiques/boss1.wav";
                                         player.PlayLooping();
                                     }
                                     else if (_mondeLevel == 2)
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/boss2.wav";
+                                        player.SoundLocation = "Musiques/boss2.wav";
                                         player.PlayLooping();
                                     }
                                     else if (_mondeLevel == 3)
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/jojo.wav";
+                                        player.SoundLocation = "Musiques/jojo.wav";
                                         player.PlayLooping();
                                     }
                                     else
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/boss+.wav";
+                                        player.SoundLocation = "Musiques/boss+.wav";
                                         player.PlayLooping();
                                     }
                                     //Dans tous les cas on génère une map avec une salle pour le marchand de taille 15x15
@@ -372,19 +378,19 @@ namespace Valhalla
                                         if (_mondeLevel == 1)
                                         {
                                             SoundPlayer player = new SoundPlayer();
-                                            player.SoundLocation = "Music/cave.wav";
+                                            player.SoundLocation = "Musiques/cave.wav";
                                             player.PlayLooping();
                                         }
                                         else if (_mondeLevel == 2)
                                         {
                                             SoundPlayer player = new SoundPlayer();
-                                            player.SoundLocation = "Music/castle.wav";
+                                            player.SoundLocation = "Musiques/castle.wav";
                                             player.PlayLooping();
                                         }
                                         else //On entre dans ce else si on est dans un monde supérieur à 4 (post fin)
                                         {
                                             SoundPlayer player = new SoundPlayer();
-                                            player.SoundLocation = "Music/theme+.wav";
+                                            player.SoundLocation = "Musiques/theme+.wav";
                                             player.PlayLooping();
                                         }
                                         _mapLevel = 1;
@@ -396,7 +402,7 @@ namespace Valhalla
                                     else //Lorsque l'on passe au monde 4, on génère une map assez semblable à celle de début
                                     {
                                         SoundPlayer player = new SoundPlayer();
-                                        player.SoundLocation = "Music/titleTheme.wav";
+                                        player.SoundLocation = "Musiques/titleTheme.wav";
                                         player.PlayLooping();
                                         _mapLevel = 1;
                                         MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 25, 25, _mapLevel, ++_mondeLevel);
