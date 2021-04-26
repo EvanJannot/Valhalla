@@ -136,7 +136,7 @@ namespace Valhalla.Core
 
             if (map.IsInFov(X, Y)) //Si elle est dans le champ de vision on l'affiche de manière claire et sinon on le floute  
             {
-                if (Name=="Cuir")
+                if (Name=="Cuir") //On différencie les types d'équipements par couleur (jaune = cuir, bleu = maille, rouge = plaque et gris = arme)
                 {
                     Color = RLColor.Yellow;
                 }

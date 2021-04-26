@@ -22,7 +22,7 @@ namespace Valhalla.Items
          Player player = Game.Player;
          Point edgePoint = GetRandomEdgePoint( map ); //On récupère l'un des bords de la map
 
-         Game.MessageLog.Add( $"{player.Name} utilise la {Name} et libère un rayon de vide chaotique" ); //On affiche un message de confirmation
+         Game.MessageLog.Add( $"{player.Name} utilise la {Name} et libere un rayon de vide chaotique" ); //On affiche un message de confirmation
             Game.MessageLog.Add(espace.ToString());
             Actor voidAttackActor = new Actor { //On définit un acteur qui va attaquer les monstres présents sur le tracé 
             Attack = 6,
