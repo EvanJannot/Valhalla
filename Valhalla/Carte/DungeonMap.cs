@@ -172,7 +172,6 @@ namespace Valhalla.Core
             {
                 if (Game.LEVEL==5) //Si on est au niveau du marchand, il faut payer une somme d'argent pour récupérer les trésors
                 {
-                    Console.WriteLine(Game.LEVEL);
                     if (actor.Gold >= 100*_monde) //Cette somme vaut 100 multiplié par le monde 
                     {
                         if (treasurePile.Treasure.PickUp(actor)) //On regarde si il est possible de prendre l'objet 

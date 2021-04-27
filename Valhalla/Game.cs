@@ -24,13 +24,13 @@ namespace Valhalla
 
         //On définit les tailles des différents écrans (map, stats, inventaire, boite de dialogues)
         private static readonly int _screenWidth = 80;  //Taille de la console générale
-        private static readonly int _screenHeight = 48;
+        private static readonly int _screenHeight = 52;
         private static readonly int _mapWidth = 60; //Taille de la map
         private static readonly int _mapHeight = 28;
         private static readonly int _messageWidth = 80; //Taille de la boite de dialogue
-        private static readonly int _messageHeight = 10;
+        private static readonly int _messageHeight = 14;
         private static readonly int _statWidth = 20; //Taille de l'écran des stats
-        private static readonly int _statHeight = 48;
+        private static readonly int _statHeight = 52;
         private static readonly int _inventoryWidth = 60; //Taille de l'inventaire
         private static readonly int _inventoryHeight = 10;
 
@@ -84,6 +84,9 @@ namespace Valhalla
                 "Mais ne t'en fais pas ! Ta vie ne s'arrête pas là. \n" +
                 "Enfin d'une certaine manière si mais il y a bien des choses après... \n" +
                 "En tant que valeureux guerrier viking, tu as une chance de parvenir au Valhalla!! Le paradis des guerriers vikings! \n" +
+                "Malheureusement il y a un petit soucis... \n" +
+                "Il se trouve qu'un ancien Roi viking bloque l'accès et le seul moyen d'y entrer est de le vaincre :) \n" +
+                "Mais pas de panique si tu es là c'est que tu devrai pouvoir le vaincre !\n" +
                 "Mais sais-tu comment te servir de ton corps dans le monde d'après ? \n" +
                 "-O : oui\n" +
                 "-N : non\n");
@@ -92,25 +95,36 @@ namespace Valhalla
             {
                 Console.WriteLine("Veuillez sélectionner une des deux options");
                 _answer = Console.ReadLine().ToUpper();
-                Console.WriteLine();
             }
             if (_answer == "N")
             {
+                Console.Clear();
                 Console.WriteLine("\n" +
                     "Déplacements : \n" +
-                    "Il suffit d'utiliser les flèches directionnelles du clavier!\n" +
+                    "Il suffit d'utiliser les flèches directionnelles du clavier!\n \n" +
                     "Changement d'étage : \n" +
-                    "Il suffit d'appuyer sur espace en se trouvant sur un escalier descendant.\n" +
+                    "Il suffit d'appuyer sur espace en se trouvant sur un escalier descendant.\n \n" +
                     "Attaque : \n" +
-                    "Pour attaquer il suffit d'avancer vers un ennemi de manière répétée pour le frapper. \n" +
+                    "Pour attaquer il suffit d'avancer vers un ennemi de manière répétée pour le frapper. \n \n" +
                     "Inventaire : \n" +
-                    "Pour utiliser un objet, il vous suffit d'appuyer sur la touche liée à l'emplacement. \n" +
+                    "Pour utiliser un objet, il vous suffit d'appuyer sur la touche liée à l'emplacement. \n \n" +
                     "Capacités : \n" +
-                    "Même principe que pour les objets ! \n" +
+                    "Même principe que pour les objets ! \n \n" +
                     "Equipement : \n" +
-                    "Il est automatiquement ramassé lorsque le joueur passe dessus !");
+                    "Il est automatiquement ramassé lorsque le joueur passe dessus !\n \n" +
+                    "Vous pouvez mettre en pause à l'aide de ECHAP et quitter le jeu avec SUPPR \n \n" +
+                    "As-tu compris?\n" +
+                    "-O: Oui \n" +
+                    "-N: Non");
+                string _controlOk = Console.ReadLine();
+                while (_controlOk != "N" & _controlOk != "O")
+                {
+                    Console.WriteLine("Veuillez sélectionner une des deux options");
+                    _controlOk = Console.ReadLine().ToUpper();
+                }
+
             }
-            Console.WriteLine();
+            Console.Clear();
             //On demande au jouur d'entrer son nom et de choisir une classe
             Random _choixNom = new Random();
             int _emplacementNom = _choixNom.Next(0,4);
@@ -172,6 +186,17 @@ namespace Valhalla
             //On génère la map en mettant une salle de 20x20 blocs 
             MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 20, 20, _mapLevel, _mondeLevel);
             DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
+            MessageLog.Add("Oh");
+            MessageLog.Add("Te voila enfin");
+            MessageLog.Add("Comme tu as du l'entendre tu dois surmonter");
+            MessageLog.Add("certaines epreuves avant de parvenir au Valhalla");
+            MessageLog.Add("Tu dois d'abord vaincre l'ours residant dans la foret");
+            MessageLog.Add("ensuite tu pourra acceder a la caverne");
+            MessageLog.Add("Au fond de cette caverne tu devra vaincre le golem");
+            MessageLog.Add("Une fois ce dernier vaincu tu aura accees au chateau");
+            MessageLog.Add("Tu devra alors stopper le Roi maudit");
+            MessageLog.Add("C'est ce dernier qui empeche l'acces au Valhalla");
+            MessageLog.Add("Une fois vaincu tu pourra enfin parvenir au paradis des vikings");
 
             //On génère les différentes consoles sur l'écran 
             _rootConsole = new RLRootConsole(fontFileName, _screenWidth, _screenHeight, 16, 16, 1.2f, consoleTitle); //On indique le fichier de police à utiliser à la fenêtre principale ainsi que le titre

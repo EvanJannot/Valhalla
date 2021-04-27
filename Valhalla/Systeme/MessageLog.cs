@@ -18,7 +18,7 @@ namespace Valhalla.Systems
         public void Add(string message)
         {
             _lines.Enqueue(message);
-            if (_lines.Count > 9)
+            if (_lines.Count > 12)
             {
                 _lines.Dequeue();
             }
