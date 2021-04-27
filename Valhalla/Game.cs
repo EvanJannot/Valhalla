@@ -121,21 +121,28 @@ namespace Valhalla
             Console.WriteLine($"Vous vous appelez bien '{_name}' ? \n" +
                 "Oui : O \n" +
                 "Non : N");
-            Console.ReadLine();
+            string _nom = Console.ReadLine();
+            while (_nom != "N" & _nom != "O")
+            {
+                Console.WriteLine("Veuillez sélectionner une des deux options");
+                _nom = Console.ReadLine().ToUpper();
+                Console.WriteLine();
+            }
             Console.WriteLine($"\nCa marche, je vous appelerai donc '{_name}' !\n");
             Console.WriteLine("Veuillez sélectionner une des classes : \n" +
                 "1 : Guerrier \n" +
                 "2 : Berserk \n" +
                 "3 : Brute \n" +
                 "4 : Eclaireur");
-            int classe = int.Parse(Console.ReadLine());
-            while (classe != 1 & classe != 2 & classe != 3 & classe != 4) //On vérifie que le choix correspond bien à une classe
+            string classe = Console.ReadLine();
+            while (classe != "1" & classe != "2" & classe != "3" & classe != "4") //On vérifie que le choix correspond bien à une classe
             {
                 Console.WriteLine("Veuillez entrer un chiffre correspondant à une classe.");
-                classe = int.Parse(Console.ReadLine());
+                classe = Console.ReadLine();
             }
+            int _classe = int.Parse(classe);
             //On définit les variables de bonus en fonction de la classe sélectionnée
-            StatsClasse(classe);
+            StatsClasse(_classe);
 
             //On joue la musique de début de jeu en boucle 
             SoundPlayer player = new SoundPlayer();
