@@ -59,6 +59,7 @@ namespace Valhalla
         }
 
         private static bool _alive = true; //Variable vérifiant si le joueur est vivant ou mort
+        private static bool _winner = false; //Variable vérifiant si le joueur a fini les 3 mondes 
         private static bool _renderRequired = true; //Variable vérifiant si il faut mettre à jour la console
 
         //On définit les différents getter et setter pour les éléments principaux de notre jeu (joueur, map, messages, le système de combat, la pause et la fin)
@@ -91,12 +92,12 @@ namespace Valhalla
                 "-O : oui\n" +
                 "-N : non\n");
             string _answer = Console.ReadLine().ToUpper();
-            while (_answer != "N" & _answer != "O")
+            while (_answer != "N" & _answer != "O") //Boucle de vérification de la valeur entrée 
             {
                 Console.WriteLine("Veuillez sélectionner une des deux options");
                 _answer = Console.ReadLine().ToUpper();
             }
-            if (_answer == "N")
+            if (_answer == "N") //Instructions 
             {
                 Console.Clear();
                 Console.WriteLine("\n" +
@@ -116,8 +117,8 @@ namespace Valhalla
                     "As-tu compris?\n" +
                     "-O: Oui \n" +
                     "-N: Non");
-                string _controlOk = Console.ReadLine();
-                while (_controlOk != "N" & _controlOk != "O")
+                string _controlOk = Console.ReadLine().ToUpper(); 
+                while (_controlOk != "N" & _controlOk != "O") //Boucle de vérification de la valeur entrée 
                 {
                     Console.WriteLine("Veuillez sélectionner une des deux options");
                     _controlOk = Console.ReadLine().ToUpper();
@@ -135,8 +136,8 @@ namespace Valhalla
             Console.WriteLine($"Vous vous appelez bien '{_name}' ? \n" +
                 "Oui : O \n" +
                 "Non : N");
-            string _nom = Console.ReadLine();
-            while (_nom != "N" & _nom != "O")
+            string _nom = Console.ReadLine().ToUpper(); 
+            while (_nom != "N" & _nom != "O") //Boucle de vérification de la valeur entrée 
             {
                 Console.WriteLine("Veuillez sélectionner une des deux options");
                 _nom = Console.ReadLine().ToUpper();
@@ -230,11 +231,24 @@ namespace Valhalla
         public static void EndGame()
         {
             _alive = false;
-            End.Add("Vous avez perdu");
-            End.Add($"Vous etes arrive jusqu'au niveau '{_mondeLevel}','{_mapLevel}'");
+            if (_winner == true)
+            {
+                End.Add("Vous avez reussi a gagner votre place au valhalla");
+                End.Add($"En continuant vous etes parvenu jusqu'au niveau '{_mondeLevel}','{_mapLevel}' ");
+                End.Add("Vous avez definitivement prouve votre valeur");
+                End.Add($"Felecitations '{_name}'");
+            }
+            else
+            {
+                End.Add("Vous avez perdu");
+                End.Add($"Vous etes arrive jusqu'au niveau '{_mondeLevel}','{_mapLevel}'");
+                End.Add("Malheureusement le Roi vous empeche d'atteindre le Valhalla");
+                End.Add("Vous etes contraint d'errer sans but dans les limbes");
+            }
             End.Add($"Vous etes monte au niveau '{Player.Lvl}'");
             End.Add("Vous pouvez quitter le jeu en appuyant sur ESCP");
             End.Add("Vous pouvez relancer une partie en appuyant sur O");
+
         }
 
         //Réinitialise les informations de jeu, remet le joueur en vie si il était mort. Permet de démarrer une nouvelle partie
@@ -440,6 +454,15 @@ namespace Valhalla
                                         MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 25, 25, _mapLevel, ++_mondeLevel);
                                         DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                         _rootConsole.Title = $"Valhalla - Fin";
+                                        MessageLog.Add("Felicitation tu as termine ta quete");
+                                        MessageLog.Add("Merci d'avoir mis fin a la colere du roi maudit");
+                                        MessageLog.Add("Tu as bien merite ta place au valhalla");
+                                        MessageLog.Add("Mais avant cela prends donc cet escalier afin de repousser tes limites");
+                                        MessageLog.Add("En effetn dans les salles suivantes se trouveront tous les monstres");
+                                        MessageLog.Add("que tu as affonte");
+                                        MessageLog.Add("Le but est de repousser tes limites pour devenir");
+                                        MessageLog.Add("le plus grand hero bon courage");
+                                        _winner = true;
                                         didPlayerAct = true;
                                     }
 
