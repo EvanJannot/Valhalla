@@ -19,7 +19,7 @@ namespace Valhalla.Monsters
                 Color = RLColor.Gray,
                 Defense = Dice.Roll("1D3") + level / 3,
                 DefenseChance = Dice.Roll("10D4"),
-                Gold = Dice.Roll("5D5"),
+                Gold = Dice.Roll("3D5"),
                 Health = health,
                 MaxHealth = health,
                 Name = "Araignee",

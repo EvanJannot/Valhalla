@@ -68,7 +68,7 @@ namespace Valhalla.Systems
             return false; //Si on ne peut pas déplacer le joueur et qu'il n'y a pas de monstre on renvoie false 
         }
 
-        //Fonction qui 
+        //Fonction qui permet d'activer les acteurs en boucle pour que ces derniers exécutent leurs actions 
         public void ActivateMonsters()
         {
             IScheduleable scheduleable = Game.SchedulingSystem.Get(); //On récupère l'acteur dont c'est le tour

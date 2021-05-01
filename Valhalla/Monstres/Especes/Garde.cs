@@ -11,21 +11,21 @@ namespace Valhalla.Monsters
     {
         public static Garde Create(int level)
         {
-            int health = Dice.Roll("2D5");
+            int health = Dice.Roll("4D5");
             return new Garde
             {
-                Attack = Dice.Roll("1D3") + level / 3,
-                AttackChance = Dice.Roll("25D3"),
+                Attack = Dice.Roll("3D3") + level / 3,
+                AttackChance = Dice.Roll("33D3"),
                 Awareness = 10,
                 Color = Colors.Player,
-                Defense = Dice.Roll("1D3") + level / 3,
-                DefenseChance = Dice.Roll("10D4"),
-                Gold = Dice.Roll("5D5"),
+                Defense = Dice.Roll("3D3") + level / 3,
+                DefenseChance = Dice.Roll("20D4"),
+                Gold = Dice.Roll("7D5"),
                 Health = health,
                 MaxHealth = health,
                 Name = "Garde",
                 Speed = 14,
-                Symbol = (char)145,
+                Symbol = (char)62,
                 Xp = level * 60
             };
         }

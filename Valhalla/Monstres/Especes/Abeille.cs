@@ -17,13 +17,13 @@ namespace Valhalla.Monsters
             int health = Dice.Roll("1D5");
             return new Abeille
             {
-                Attack = Dice.Roll("1D2") + level,
+                Attack = Dice.Roll("1D2") + level / 3,
                 AttackChance = Dice.Roll("10D5"),
                 Awareness = 10,
                 Color = RLColor.Yellow,
-                Defense = Dice.Roll("1D2") + level,
+                Defense = Dice.Roll("1D2") + level / 3,
                 DefenseChance = Dice.Roll("10D4"),
-                Gold = Dice.Roll("1D20") * level,
+                Gold = Dice.Roll("1D20"),
                 Health = health,
                 MaxHealth = health,
                 Name = "Abeille",

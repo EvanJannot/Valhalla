@@ -14,13 +14,13 @@ namespace Valhalla.Monsters
             int health = 15;
             return new Golem
             {
-                Attack = 20,
+                Attack = 15,
                 AttackChance = 40,
                 Awareness = 10,
                 Color = RLColor.Brown,
                 Defense = 7,
                 DefenseChance = 50,
-                Gold = 100,
+                Gold = 200,
                 Health = health,
                 MaxHealth = health,
                 Name = "Golem",

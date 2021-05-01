@@ -15,16 +15,16 @@ namespace Valhalla.Monsters
 
         public static Rat Create(int level)
         {
-            int health = Dice.Roll("1D5");
+            int health = Dice.Roll("3D5");
             return new Rat
             {
-                Attack = Dice.Roll("1D2") + level,
-                AttackChance = Dice.Roll("10D5"),
+                Attack = Dice.Roll("3D2") + level / 3,
+                AttackChance = Dice.Roll("15D5"),
                 Awareness = 10,
                 Color = RLColor.Gray,
-                Defense = Dice.Roll("1D2") + level,
-                DefenseChance = Dice.Roll("10D4"),
-                Gold = Dice.Roll("1D20") * level,
+                Defense = Dice.Roll("3D2") + level / 3,
+                DefenseChance = Dice.Roll("15D4"),
+                Gold = Dice.Roll("3D20"),
                 Health = health,
                 MaxHealth = health,
                 Name = "Rat",
