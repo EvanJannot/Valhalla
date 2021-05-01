@@ -14,7 +14,7 @@ namespace Valhalla.Monsters
             int health = 10;
             return new Ours
             {
-                Attack = 20,
+                Attack = 10,
                 AttackChance = 40,
                 Awareness = 10,
                 Color = RLColor.Brown,

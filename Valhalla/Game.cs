@@ -117,7 +117,7 @@ namespace Valhalla
                     "As-tu compris?\n" +
                     "-O: Oui \n" +
                     "-N: Non");
-                string _controlOk = Console.ReadLine().ToUpper(); 
+                string _controlOk = Console.ReadLine().ToUpper();
                 while (_controlOk != "N" & _controlOk != "O") //Boucle de vérification de la valeur entrée 
                 {
                     Console.WriteLine("Veuillez sélectionner une des deux options");
@@ -128,7 +128,7 @@ namespace Valhalla
             Console.Clear();
             //On demande au jouur d'entrer son nom et de choisir une classe
             Random _choixNom = new Random();
-            int _emplacementNom = _choixNom.Next(0,4);
+            int _emplacementNom = _choixNom.Next(0, 4);
             _name = _listeNoms[_emplacementNom];
             Console.WriteLine("Comment vous applez-vous ?");
             Console.ReadLine();
@@ -136,7 +136,7 @@ namespace Valhalla
             Console.WriteLine($"Vous vous appelez bien '{_name}' ? \n" +
                 "Oui : O \n" +
                 "Non : N");
-            string _nom = Console.ReadLine().ToUpper(); 
+            string _nom = Console.ReadLine().ToUpper();
             while (_nom != "N" & _nom != "O") //Boucle de vérification de la valeur entrée 
             {
                 Console.WriteLine("Veuillez sélectionner une des deux options");
@@ -255,6 +255,7 @@ namespace Valhalla
         public static void Reset()
         {
             _alive = true;
+            _winner = false;
             _renderRequired = true;
             _atkX = 0;
             _defX = 0;
@@ -376,7 +377,7 @@ namespace Valhalla
                                 {
                                     MessageLog.Add("Bienvenue mon brave");
                                     MessageLog.Add("Tu as accompli un bon nombre d'epreuves pour arriver jusqu'a moi");
-                                    MessageLog.Add($"Ici tu peux m'acheter des objets utiles pour ta quete a '{100*_mondeLevel}' pieces d'or");
+                                    MessageLog.Add($"Ici tu peux m'acheter des objets utiles pour ta quete a '{100 * _mondeLevel}' pieces d'or");
                                     MessageLog.Add("Bon courage pour atteindre le Valhalla");
                                     if (_mondeLevel == 1)
                                     {

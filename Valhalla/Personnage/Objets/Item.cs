@@ -9,7 +9,7 @@ namespace Valhalla.Core
     public class Item : IItem, ITreasure, IDrawable
     {
         StringBuilder espace = new StringBuilder();
-        public Item() 
+        public Item()
         {
             Symbol = (char)15; //On définit le symbole qui est une fiole marron
             Color = RLColor.Brown;

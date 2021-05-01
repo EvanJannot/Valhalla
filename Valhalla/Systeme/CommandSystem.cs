@@ -228,7 +228,7 @@ namespace Valhalla.Systems
             }
 
             //Si c'est une touche d'objet on l'utilise 
-            bool didUseItem = false; 
+            bool didUseItem = false;
             if (key == RLKey.Number1)
             {
                 didUseItem = Game.Player.Item1.Use();
@@ -251,7 +251,7 @@ namespace Valhalla.Systems
                 RemoveItemsWithNoRemainingUses(); //On supprime les objets qui n'ont plus d'utilisation
             }
 
-            return didUseItem; 
+            return didUseItem;
         }
 
         //Fonction qui supprime les objets qui n'ont plus d'utilisation

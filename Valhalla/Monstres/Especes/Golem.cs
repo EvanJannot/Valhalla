@@ -14,7 +14,7 @@ namespace Valhalla.Monsters
             int health = 15;
             return new Golem
             {
-                Attack = 35,
+                Attack = 20,
                 AttackChance = 40,
                 Awareness = 10,
                 Color = RLColor.Brown,

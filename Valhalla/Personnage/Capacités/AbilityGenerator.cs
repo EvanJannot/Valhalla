@@ -8,7 +8,7 @@ namespace Valhalla.Systems
     public static class AbilityGenerator
     {
 
-        public static Ability CreateAbility() 
+        public static Ability CreateAbility()
         {
             Pool<Ability> _abilityPool = new Pool<Ability>(); //Chaque sort a autant de chance d'apparaitre 
             _abilityPool.Add(new Heal(10), 10);

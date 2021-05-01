@@ -170,9 +170,9 @@ namespace Valhalla.Core
             List<TreasurePile> treasureAtLocation = _treasurePiles.Where(g => g.X == x && g.Y == y).ToList();
             foreach (TreasurePile treasurePile in treasureAtLocation) //Pour chaque trésor de la liste 
             {
-                if (Game.LEVEL==5) //Si on est au niveau du marchand, il faut payer une somme d'argent pour récupérer les trésors
+                if (Game.LEVEL == 5) //Si on est au niveau du marchand, il faut payer une somme d'argent pour récupérer les trésors
                 {
-                    if (actor.Gold >= 100*_monde) //Cette somme vaut 100 multiplié par le monde 
+                    if (actor.Gold >= 100 * _monde) //Cette somme vaut 100 multiplié par le monde 
                     {
                         if (treasurePile.Treasure.PickUp(actor)) //On regarde si il est possible de prendre l'objet 
                         {
@@ -185,7 +185,7 @@ namespace Valhalla.Core
                 {
                     if (treasurePile.Treasure.PickUp(actor)) //On regarde si l'acteur peut prendre l'objet (les monstres ne peuvent pas prendre n'importe quel objet)
                     {
-                        _treasurePiles.Remove(treasurePile); 
+                        _treasurePiles.Remove(treasurePile);
                     }
                 }
             }
@@ -194,7 +194,7 @@ namespace Valhalla.Core
         //Fonction pour vérifier si un joueur peut descendre au niveau suivant en vérifiant si le joueur est bien sur un escalier qui descend
         public bool CanMoveDownToNextLevel()
         {
-            Player player = Game.Player; 
+            Player player = Game.Player;
 
             return StairsDown.X == player.X && StairsDown.Y == player.Y;
         }
@@ -261,7 +261,7 @@ namespace Valhalla.Core
             {
                 door.Draw(mapConsole, this, monde);
             }
-            if (_monde != 0 & _monde !=4) //Si on est pas au monde 0 on dessine les escaliers montant et descendant
+            if (_monde != 0 & _monde != 4) //Si on est pas au monde 0 on dessine les escaliers montant et descendant
             {
                 StairsUp.Draw(mapConsole, this, monde);
                 StairsDown.Draw(mapConsole, this, monde);
@@ -340,9 +340,9 @@ namespace Valhalla.Core
                     }
                     else
                     {
-                        if (Game.LEVEL==5) //Au niveau 5 on affiche un marchand
+                        if (Game.LEVEL == 5) //Au niveau 5 on affiche un marchand
                         {
-                            if (cell.X == this.Rooms.Last().Center.X && cell.Y == this.Rooms.Last().Center.Y - 2) 
+                            if (cell.X == this.Rooms.Last().Center.X && cell.Y == this.Rooms.Last().Center.Y - 2)
                             {
                                 console.Set(cell.X, cell.Y, Colors.Player, RLColor.Black, (char)94);
                             }
@@ -409,7 +409,7 @@ namespace Valhalla.Core
                         }
                     }
                 }
-                else if (monde!=0 && monde != 1 && monde != 2 && monde != 3 && monde != 4) //Les mondes d'après sont tous pareils, sol en bois et murs en bois
+                else if (monde != 0 && monde != 1 && monde != 2 && monde != 3 && monde != 4) //Les mondes d'après sont tous pareils, sol en bois et murs en bois
                 {
                     if (cell.IsWalkable)
                     {
@@ -494,7 +494,7 @@ namespace Valhalla.Core
                 {
                     if (cell.IsWalkable)
                     {
-                        console.Set(cell.X, cell.Y, Colors.Floor, RLColor.Black, (char)132);
+                        console.Set(cell.X, cell.Y, Colors.Floor, RLColor.Black, (char)154);
                     }
                     else
                     {

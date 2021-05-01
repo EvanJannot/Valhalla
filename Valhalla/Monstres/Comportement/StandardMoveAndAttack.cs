@@ -38,7 +38,7 @@ namespace Valhalla.Behaviors
                 {
                     path = pathFinder.ShortestPath(dungeonMap.GetCell(monster.X, monster.Y), dungeonMap.GetCell(player.X, player.Y));
                 }
-                catch 
+                catch
                 {
                 }
 

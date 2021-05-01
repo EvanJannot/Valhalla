@@ -65,10 +65,7 @@ namespace Valhalla.Core
                         console.Set(X, Y, Colors.Floor, RLColor.Black, (char)150);
                     }
                 }
-
             }
-
-
         }
     }
 }

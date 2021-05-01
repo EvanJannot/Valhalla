@@ -50,10 +50,6 @@ namespace Valhalla.Core
                     {
                         Health = MaxHealth;
                     }
-                    if ((AttackChance + 1) < 100) //On augmente de 1% les chances d'attaques 
-                    {
-                        AttackChance += 1;
-                    }
                 }
                 else //Si on ne monte pas de niveau on ajoute juste l'xp
                 {
@@ -123,10 +119,6 @@ namespace Valhalla.Core
         //Fonctions permettant d'afficher les statistiques du joueur, son inventaire, ses capacités et ses objets
         public void DrawStats(RLConsole statConsole) //On affiche juste les statistiques avec des symboles pour que cela soit plus visuel
         {
-            if (AttackChance > 100) //Permet de ne pas dépasser les 100% de chances d'attaque 
-            {
-                AttackChance =100; 
-            }
             statConsole.Print(1, 1, $"Nom: {Name}", RLColor.White);
             statConsole.Print(1, 3, $"Vie:     {Health}-{MaxHealth}" + (char)26, RLColor.White);
             statConsole.Print(1, 5, $"Attaque: {Attack} ({AttackChance}<)" + (char)12, RLColor.White);

@@ -30,7 +30,7 @@ namespace Valhalla.Core
         public int Speed { get; set; }
 
 
-    //Permet de vérifier si un équipement est égale à un autre 
+        //Permet de vérifier si un équipement est égale à un autre 
         protected bool Equals(Equipment other)
         {
             return Attack == other.Attack && AttackChance == other.AttackChance && Awareness == other.Awareness && Defense == other.Defense && DefenseChance == other.DefenseChance && Gold == other.Gold && Health == other.Health && MaxHealth == other.MaxHealth && string.Equals(Name, other.Name) && Speed == other.Speed;
@@ -129,6 +129,18 @@ namespace Valhalla.Core
         //Fonction pour dessiner l'equipement au sol
         public void Draw(RLConsole console, IMap map, int lvl)
         {
+            if (this is BodyEquipment)
+            {
+                Symbol = (char)162;
+            }
+            if (this is FeetEquipment)
+            {
+                Symbol = (char)163;
+            }
+            if (this is HandEquipment)
+            {
+                Symbol = (char)12;
+            }
             if (!map.IsExplored(X, Y)) //Si la case n'est pas explorée on affiche rien 
             {
                 return;
@@ -136,19 +148,19 @@ namespace Valhalla.Core
 
             if (map.IsInFov(X, Y)) //Si elle est dans le champ de vision on l'affiche de manière claire et sinon on le floute  
             {
-                if (Name=="Cuir") //On différencie les types d'équipements par couleur (jaune = cuir, bleu = maille, rouge = plaque et gris = arme)
+                if (Name == "Cuir") //On différencie les types d'équipements par couleur (jaune = cuir, bleu = maille, rouge = plaque et gris = arme)
                 {
                     Color = RLColor.Yellow;
                 }
-                else if (Name=="Maille")
+                else if (Name == "Maille")
                 {
                     Color = RLColor.Blue;
                 }
-                else if (Name=="Plaque")
+                else if (Name == "Plaque")
                 {
                     Color = RLColor.Red;
                 }
-                else 
+                else
                 {
                     Color = RLColor.Gray;
                 }

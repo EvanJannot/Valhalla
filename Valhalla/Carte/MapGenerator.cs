@@ -87,7 +87,7 @@ namespace Valhalla.Systems
 
             for (int r = 0; r < _map.Rooms.Count; r++) //Permet de créer les tunnels entre les salles 
             {
-                if (r == 0) 
+                if (r == 0)
                 {
                     continue;
                 }
@@ -261,7 +261,7 @@ namespace Valhalla.Systems
             Cell bottom = _map.GetCell(cell.X, cell.Y + 1);
 
             //Si il y a une porte autour on ne fait rien 
-            if (_map.GetDoor(cell.X, cell.Y) != null || 
+            if (_map.GetDoor(cell.X, cell.Y) != null ||
                  _map.GetDoor(right.X, right.Y) != null ||
                  _map.GetDoor(left.X, left.Y) != null ||
                  _map.GetDoor(top.X, top.Y) != null ||
@@ -301,7 +301,7 @@ namespace Valhalla.Systems
                     _map.StairsUp = new Stairs //Les escaliers sont au fond de la salle 
                     {
                         X = _map.Rooms.First().Center.X,
-                        Y = _map.Rooms.First().Center.Y+7,
+                        Y = _map.Rooms.First().Center.Y + 7,
                         IsUp = true
                     };
                     _map.StairsDown = new Stairs
@@ -339,7 +339,7 @@ namespace Valhalla.Systems
                 {
                     if (room == _map.Rooms[0]) //On place le monstre dans la première salle 
                     {
-                        if (_map.DoesRoomHaveWalkableSpace(room)) 
+                        if (_map.DoesRoomHaveWalkableSpace(room))
                         {
                             Point randomRoomLocation = _map.GetRandomLocationInRoom(room);
                             if (randomRoomLocation != null)
@@ -435,7 +435,7 @@ namespace Valhalla.Systems
         //Fonction pour créer et places des objets sur la map le fonctionnement est le même que pour l'équipement
         private void PlaceItems(int lvl)
         {
-            if (lvl == 5) 
+            if (lvl == 5)
             {
                 foreach (var room in _map.Rooms)
                 {
@@ -480,7 +480,7 @@ namespace Valhalla.Systems
                 Player player = ActorGenerator.CreatePlayer(atkX, defX, awaX, hpX, name, symbol);
 
                 player.X = _map.Rooms[0].Center.X;
-                player.Y = _map.Rooms[0].Center.Y+7;
+                player.Y = _map.Rooms[0].Center.Y + 7;
 
                 _map.AddPlayer(player);
             }
@@ -531,7 +531,6 @@ namespace Valhalla.Systems
                     }
                 }
             }
-            
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Valhalla.Monsters
             int health = 30;
             return new Roi
             {
-                Attack = 45,
+                Attack = 30,
                 AttackChance = 40,
                 Awareness = 10,
                 Color = Colors.Player,

@@ -202,7 +202,7 @@ namespace Valhalla.Core
                 {
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)8);
                 }
-                else if (lvl==2)
+                else if (lvl == 2)
                 {
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)95);
                 }
@@ -210,7 +210,7 @@ namespace Valhalla.Core
                 {
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)64);
                 }
-                else 
+                else
                 {
                     mapConsole.Set(X, Y, Colors.Floor, Colors.FloorBackground, (char)154);
                 }
