@@ -141,29 +141,28 @@ namespace Valhalla.Core
             {
                 Symbol = (char)12;
             }
+            if (Name == "Cuir") //On différencie les types d'équipements par couleur (jaune = cuir, bleu = maille, rouge = plaque et gris = arme)
+            {
+                Color = RLColor.Yellow;
+            }
+            else if (Name == "Maille")
+            {
+                Color = RLColor.Blue;
+            }
+            else if (Name == "Plaque")
+            {
+                Color = RLColor.Red;
+            }
+            else
+            {
+                Color = RLColor.Gray;
+            }
             if (!map.IsExplored(X, Y)) //Si la case n'est pas explorée on affiche rien 
             {
                 return;
             }
-
             if (map.IsInFov(X, Y)) //Si elle est dans le champ de vision on l'affiche de manière claire et sinon on le floute  
             {
-                if (Name == "Cuir") //On différencie les types d'équipements par couleur (jaune = cuir, bleu = maille, rouge = plaque et gris = arme)
-                {
-                    Color = RLColor.Yellow;
-                }
-                else if (Name == "Maille")
-                {
-                    Color = RLColor.Blue;
-                }
-                else if (Name == "Plaque")
-                {
-                    Color = RLColor.Red;
-                }
-                else
-                {
-                    Color = RLColor.Gray;
-                }
                 console.Set(X, Y, Color, Colors.FloorBackgroundFov, Symbol);
             }
             else

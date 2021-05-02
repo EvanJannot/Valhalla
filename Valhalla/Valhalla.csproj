@@ -74,7 +74,7 @@
     <Compile Include="Personnage\Capacités\DoNothing.cs" />
     <Compile Include="Personnage\Capacités\LightningBolt.cs" />
     <Compile Include="Personnage\Capacités\MagicMissile.cs" />
-    <Compile Include="Personnage\Capacités\RevealMap.cs" />
+    <Compile Include="Personnage\Capacités\Foresight.cs" />
     <Compile Include="Personnage\Capacités\Whirlwind.cs" />
     <Compile Include="Core\Actor.cs" />
     <Compile Include="Monstres\Especes\Abeille.cs" />
@@ -114,7 +114,7 @@
     <Compile Include="Personnage\Objets\HealingPotion.cs" />
     <Compile Include="Personnage\Objets\NoItem.cs" />
     <Compile Include="Personnage\Objets\DestructionWand.cs" />
-    <Compile Include="Personnage\Objets\ArmorScroll.cs" />
+    <Compile Include="Personnage\Objets\Armure++.cs" />
     <Compile Include="Personnage\Objets\Whetstone.cs" />
     <Compile Include="Monstres\Especes\Ours.cs" />
     <Compile Include="Monstres\Especes\Squelette.cs" />

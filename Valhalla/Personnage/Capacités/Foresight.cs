@@ -4,13 +4,13 @@ using Valhalla.Core;
 namespace Valhalla.Abilities
 {
     //Sort permettant de réveler la carte autour du joueur 
-    public class RevealMap : Ability
+    public class Foresight : Ability
     {
         private readonly int _revealDistance;
 
-        public RevealMap(int revealDistance) //On définit le nom, le temps de rechargement ainsi que la distance à laquelle la map va être découverte 
+        public Foresight(int revealDistance) //On définit le nom, le temps de rechargement ainsi que la distance à laquelle la map va être découverte 
         {
-            Name = "Reveler la Carte";
+            Name = "Clairvoyance";
             TurnsToRefresh = 100;
             TurnsUntilRefreshed = 0;
             _revealDistance = revealDistance;

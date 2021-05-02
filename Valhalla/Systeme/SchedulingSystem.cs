@@ -55,7 +55,7 @@ namespace Valhalla.Systems
         {
             var firstScheduleableGroup = _scheduleables.First(); //On récupère le premier dans le dictionnaire 
             var firstScheduleable = firstScheduleableGroup.Value.First(); //On récupère sa valeur 
-            Remove(firstScheduleable); //On le supprime du dicctionnaire 
+            Remove(firstScheduleable); //On le supprime du dictionnaire 
             _time = firstScheduleableGroup.Key; //Le temps avance jusqu'à son tour (exemple : si on est au temps 0 et que le premier qui va jouer joue au bout de 2 temps on passe au temps 2)
             return firstScheduleable; //On retourne l'élément qui a joué 
         }
