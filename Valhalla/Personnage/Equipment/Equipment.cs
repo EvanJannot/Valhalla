@@ -30,7 +30,7 @@ namespace Valhalla.Core
         public int Speed { get; set; }
 
 
-        //Permet de vérifier si un équipement est égale à un autre 
+        //Permet de vérifier si un équipement est égale à un autre
         protected bool Equals(Equipment other)
         {
             return Attack == other.Attack && AttackChance == other.AttackChance && Awareness == other.Awareness && Defense == other.Defense && DefenseChance == other.DefenseChance && Gold == other.Gold && Health == other.Health && MaxHealth == other.MaxHealth && string.Equals(Name, other.Name) && Speed == other.Speed;
@@ -70,6 +70,8 @@ namespace Valhalla.Core
                 return hashCode;
             }
         }
+
+        //Ci-dessous, deux méthodes qui permettent de redéfinir les opérateurs logiques "==" et "!=" afin de ne pas comparer des nombres mais des équipements
 
         //Opérateur qui permet de comparer deux équipements (utilisé pour vérifier qu'il n'y a pas d'équipement)
         public static bool operator ==(Equipment left, Equipment right)

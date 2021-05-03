@@ -5,12 +5,12 @@ using System.Text;
 namespace Valhalla.Items
 {
     //Classe définissant le parchemin d'amélioration de l'armure 
-    public class ArmorScroll : Item
+    public class ArmorPlus : Item
     {
         StringBuilder espace = new StringBuilder();
-        public ArmorScroll() //On définit le nom et le nombre d'utilisations
+        public ArmorPlus() //On définit le nom et le nombre d'utilisations
         {
-            Name = "Amrure++";
+            Name = "Amrure+";
             RemainingUses = 1;
             Symbol = (char)164;
         }

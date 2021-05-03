@@ -114,7 +114,7 @@
     <Compile Include="Personnage\Objets\HealingPotion.cs" />
     <Compile Include="Personnage\Objets\NoItem.cs" />
     <Compile Include="Personnage\Objets\DestructionWand.cs" />
-    <Compile Include="Personnage\Objets\Armure++.cs" />
+    <Compile Include="Personnage\Objets\Armor+.cs" />
     <Compile Include="Personnage\Objets\Whetstone.cs" />
     <Compile Include="Monstres\Especes\Ours.cs" />
     <Compile Include="Monstres\Especes\Squelette.cs" />

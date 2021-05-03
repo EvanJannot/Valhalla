@@ -130,10 +130,10 @@ namespace Valhalla
             Random _choixNom = new Random();
             int _emplacementNom = _choixNom.Next(0, 4);
             _name = _listeNoms[_emplacementNom];
-            Console.WriteLine("Comment vous applez-vous ?");
+            Console.WriteLine("Mais dis moi, comment t'appelles-tu ?");
             Console.ReadLine();
             Console.WriteLine();
-            Console.WriteLine($"Vous vous appelez bien '{_name}' ? \n" +
+            Console.WriteLine($"Tu t'appelles bien '{_name}' ? \n" +
                 "Oui : O \n" +
                 "Non : N");
             string _nom = Console.ReadLine().ToUpper();
@@ -143,12 +143,12 @@ namespace Valhalla
                 _nom = Console.ReadLine().ToUpper();
                 Console.WriteLine();
             }
-            Console.WriteLine($"\nCa marche, je vous appelerai donc '{_name}' !\n");
-            Console.WriteLine("Veuillez sélectionner une des classes : \n" +
-                "1 : Guerrier \n" +
-                "2 : Berserk \n" +
-                "3 : Brute \n" +
-                "4 : Eclaireur");
+            Console.WriteLine($"\nCa marche, je t'appelerai donc '{_name}' !\n");
+            Console.WriteLine("Quel été ta classe sur Terre ? \n" +
+                "1 : Guerrier (classe équilibrée)\n" +
+                "2 : Berserk (attaque + 1, défense -1)\n" +
+                "3 : Brute (vie +30, défense -1)\n" +
+                "4 : Eclaireur (vision +5 cases, vie -25)");
             string classe = Console.ReadLine();
             while (classe != "1" & classe != "2" & classe != "3" & classe != "4") //On vérifie que le choix correspond bien à une classe
             {
@@ -452,14 +452,14 @@ namespace Valhalla
                                         player.SoundLocation = "Musiques/titleTheme.wav";
                                         player.PlayLooping();
                                         _mapLevel = 1;
-                                        MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 25, 25, _mapLevel, ++_mondeLevel);
+                                        MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 1, 20, 20, _mapLevel, ++_mondeLevel);
                                         DungeonMap = mapGenerator.CreateMap(_mondeLevel, _mapLevel, _atkX, _defX, _awaX, _hpX, _name, _symbol);
                                         _rootConsole.Title = $"Valhalla - Fin";
                                         MessageLog.Add("Felicitation tu as termine ta quete");
                                         MessageLog.Add("Merci d'avoir mis fin a la colere du roi maudit");
                                         MessageLog.Add("Tu as bien merite ta place au valhalla");
                                         MessageLog.Add("Mais avant cela prends donc cet escalier afin de repousser tes limites");
-                                        MessageLog.Add("En effetn dans les salles suivantes se trouveront tous les monstres");
+                                        MessageLog.Add("En effet dans les salles suivantes se trouveront tous les monstres");
                                         MessageLog.Add("que tu as affonte");
                                         MessageLog.Add("Le but est de repousser tes limites pour devenir");
                                         MessageLog.Add("le plus grand hero bon courage");
