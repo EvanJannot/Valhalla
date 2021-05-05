@@ -11,7 +11,7 @@ namespace Valhalla
 {
     public static class Game
     {
-        private static List<string> _listeNoms = new List<string> { "puduku", "grolar", "padecervo", "MoNsTeRsLaYeR" };
+        private static List<string> _listeNoms = new List<string> { "puduku", "grolar", "padcervo", "pabo", "quasimodo", "pouilleux" };
 
         //On définit les variables de bonus de stat liées aux classes
         private static int _atkX;
@@ -128,7 +128,7 @@ namespace Valhalla
             Console.Clear();
             //On demande au jouur d'entrer son nom et de choisir une classe
             Random _choixNom = new Random();
-            int _emplacementNom = _choixNom.Next(0, 4);
+            int _emplacementNom = _choixNom.Next(0, 6);
             _name = _listeNoms[_emplacementNom];
             Console.WriteLine("Mais dis moi, comment t'appelles-tu ?");
             Console.ReadLine();
