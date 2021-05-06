@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Valhalla.Core.Door" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAgAAAaAA=</HashCode>
+      <FileName>Carte\Door.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Core.DungeonMap" Collapsed="true">
+    <Position X="44" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIUBgIMQAABiCYABQCBQACAAAAAIAAAAgBAAAGAQE=</HashCode>
+      <FileName>Carte\DungeonMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Core.Stairs" Collapsed="true">
+    <Position X="40.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Carte\Stairs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Core.TreasurePile" Collapsed="true">
+    <Position X="37" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Carte\TreasurePile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Core.Actor" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBIAKiAIACEACoAgABABAAQBAIAAAAACBAAAgwAAaUk=</HashCode>
+      <FileName>Core\Actor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Core.Colors" Collapsed="true">
+    <Position X="38.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAYACAABAAAAAiAAAAAgAAAEFEAAAQAgBABAQAAAAA=</HashCode>
+      <FileName>Core\Colors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Core.Swatch" Collapsed="true">
+    <Position X="44" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYkAgFAAAIAEBGMBRgIAAAAACAAYACAAoEAAAACAAGE=</HashCode>
+      <FileName>Core\Colors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Core.Monster" Collapsed="true">
+    <Position X="20.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAACABAAAAAAAAAAAABA=</HashCode>
+      <FileName>Monstres\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Core.Ability" Collapsed="true">
+    <Position X="11.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAgAAAAAAAAQAAAAAAEAQAAAAgAAEaAI=</HashCode>
+      <FileName>Personnage\Capacités\Ability.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Core.Equipment" Collapsed="true">
+    <Position X="8" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACiAAAAAACgAAgAAAAAQBAIAAAMAAAAAAggAAaiE=</HashCode>
+      <FileName>Personnage\Equipment\Equipment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Core.Gold" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAgAAAAAAAACAAAAAAAAAAAAAgAAAaAA=</HashCode>
+      <FileName>Personnage\Gold.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Core.Item" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQAAAAAAgAAAAAAAAQAAAAEAEAAAAAAoAAAaAA=</HashCode>
+      <FileName>Personnage\Objets\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Core.Player" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAIBAAABEEEAmAAAAgICAAAAAAAAAQAAAQAA=</HashCode>
+      <FileName>Personnage\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.MapGenerator" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAVAAQCAAEAAgAAQCQAAABQAACAABEAQAgIgEAA=</HashCode>
+      <FileName>Carte\MapGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.AbilityGenerator" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Capacités\AbilityGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.EquipmentGenerator" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Equipment\EquipmentGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.ItemGenerator" Collapsed="true">
+    <Position X="44" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\ItemGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.ActorGenerator" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAgAAAASAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Systeme\ActorGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.CommandSystem" Collapsed="true">
+    <Position X="40.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAwAAAAAIAAiAAAAAAAAAIBAAAAQAAAAAQAAAYA=</HashCode>
+      <FileName>Systeme\CommandSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.End" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Systeme\End.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.MessageLog" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Systeme\MessageLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.Pause" Collapsed="true">
+    <Position X="38.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Systeme\Pause.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.Pool&lt;T&gt;" Collapsed="true">
+    <Position X="40.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAQAAAE=</HashCode>
+      <FileName>Systeme\Pool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.PoolItem&lt;T&gt;" Collapsed="true">
+    <Position X="42.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Systeme\Pool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.SchedulingSystem" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAgAABAAAAABAAAgAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Systeme\SchedulingSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Systems.TargetingSystem" Collapsed="true">
+    <Position X="35.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAgAEAwAgAgEIAAgAgAAAAAAAAAQAAAAgEAE=</HashCode>
+      <FileName>Systeme\TargetingSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Game" Collapsed="true">
+    <Position X="40.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAYgIAABDAAKBIAMAAACAAACBO+IBAEIQkAERwARCgA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Behaviors.FullyHeal" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Monstres\Comportement\FullyHeal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Behaviors.RunAway" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEA=</HashCode>
+      <FileName>Monstres\Comportement\RunAway.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Behaviors.ShoutForHelp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEA=</HashCode>
+      <FileName>Monstres\Comportement\ShoutForHelp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Behaviors.SplitSlime" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Monstres\Comportement\SplitSlime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Behaviors.StandardMoveAndAttack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEA=</HashCode>
+      <FileName>Monstres\Comportement\StandardMoveAndAttack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Valhalla.Monsters.Abeille" Collapsed="true">
+    <Position X="21.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAACAQAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Abeille.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Araignee" Collapsed="true">
+    <Position X="26" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Araignee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Chauve_souris" Collapsed="true">
+    <Position X="30.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAACAQAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Chauve souris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Demon" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Demon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Fantome" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Fantome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Garde" Collapsed="true">
+    <Position X="12.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Garde.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Golem" Collapsed="true">
+    <Position X="14.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Golem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Ours" Collapsed="true">
+    <Position X="17" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Ours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Rat" Collapsed="true">
+    <Position X="19.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAACAQAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Rat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Roi" Collapsed="true">
+    <Position X="23.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Roi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Slime" Collapsed="true">
+    <Position X="28.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Slime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Monsters.Squelette" Collapsed="true">
+    <Position X="32.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monstres\Especes\Squelette.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Abilities.DoNothing" Collapsed="true">
+    <Position X="5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAA=</HashCode>
+      <FileName>Personnage\Capacités\DoNothing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Abilities.Fireball" Collapsed="true">
+    <Position X="7.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAIAEAAAAAAAAAEAEE=</HashCode>
+      <FileName>Personnage\Capacités\Fireball.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Abilities.Foresight" Collapsed="true">
+    <Position X="9.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Personnage\Capacités\Foresight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Abilities.Heal" Collapsed="true">
+    <Position X="11.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAEAAA=</HashCode>
+      <FileName>Personnage\Capacités\Heal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Abilities.LightningBolt" Collapsed="true">
+    <Position X="14" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAIAEAAAAAAAAAEAEA=</HashCode>
+      <FileName>Personnage\Capacités\LightningBolt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Abilities.MagicMissile" Collapsed="true">
+    <Position X="16.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAIAEAAAAAAAAAEAEA=</HashCode>
+      <FileName>Personnage\Capacités\MagicMissile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Valhalla.Abilities.Whirlwind" Collapsed="true">
+    <Position X="18.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAA=</HashCode>
+      <FileName>Personnage\Capacités\Whirlwind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Equipment.BodyEquipment" Collapsed="true">
+    <Position X="9.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAkAAAA=</HashCode>
+      <FileName>Personnage\Equipment\BodyEquipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Equipment.FeetEquipment" Collapsed="true">
+    <Position X="11.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAkAAAA=</HashCode>
+      <FileName>Personnage\Equipment\FeetEquipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Equipment.HandEquipment" Collapsed="true">
+    <Position X="4.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Personnage\Equipment\HandEquipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Equipment.HeadEquipment" Collapsed="true">
+    <Position X="7" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAkAAAA=</HashCode>
+      <FileName>Personnage\Equipment\HeadEquipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.ArmorPlus" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\Armor+.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.DestructionWand" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\DestructionWand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.HealingPotion" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\HealingPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.NoItem" Collapsed="true">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\NoItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.RevealMapScroll" Collapsed="true">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\RevealMapScroll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.TeleportScroll" Collapsed="true">
+    <Position X="16.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\TeleportScroll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Valhalla.Items.Whetstone" Collapsed="true">
+    <Position X="18.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personnage\Objets\Whetstone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Valhalla.Interfaces.IAbility" Collapsed="true">
+    <Position X="35.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAQAAAAAAAAQAI=</HashCode>
+      <FileName>Interfaces\IAbility.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.IActor" Collapsed="true">
+    <Position X="37" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIACiAAACAACIAAAAABAAQBAIAAAAAAAAAAAgAAAAE=</HashCode>
+      <FileName>Interfaces\IActor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.IBehavior" Collapsed="true">
+    <Position X="38.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Interfaces\IBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.IDrawable" Collapsed="true">
+    <Position X="40.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAaAA=</HashCode>
+      <FileName>Interfaces\IDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.IEquipment" Collapsed="true">
+    <Position X="42.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACiAAAAAACAAAAAAAAAQBAIAAAAAAAAAAAgAAAAE=</HashCode>
+      <FileName>Interfaces\IEquipment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.IItem" Collapsed="true">
+    <Position X="44" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Interfaces\IItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.IScheduleable" Collapsed="true">
+    <Position X="35.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Interfaces\IScheduleable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.ITargetable" Collapsed="true">
+    <Position X="37" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITargetable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Valhalla.Interfaces.ITreasure" Collapsed="true">
+    <Position X="38.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITreasure.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Valhalla.Core.Direction" Collapsed="true">
+    <Position X="35.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAgIAAAAAAAAAAAAAAAAAAAAAAAAACACAIAEJAAI=</HashCode>
+      <FileName>Carte\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
