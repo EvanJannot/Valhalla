@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Diagramme.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
